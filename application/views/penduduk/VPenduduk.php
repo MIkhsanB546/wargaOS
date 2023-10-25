@@ -164,30 +164,33 @@
                                                 <input type="date" class="form-control" name="tgl_lahir" id="tgl_lahir" value="<?php echo $ReadDS->tgl_lahir; ?>">
                                             </div>
                                             <div class="mb-3">
-                                              <label for="status1" class="form-label">Status 1</label>
-                                              <select name="status1" id="status1" class="form-select">
-                                                <option value="Menikah">Menikah</option>
-                                                <option value="Belum Menikah">Belum Menikah</option>
-                                                <option value="Janda">Janda</option>
-                                                <option value="Duda">Duda</option>
-                                              </select>
-                                            </div>
-                                            <div class="mb-3">
-                                              <label for="status2" class="form-label">Status 2</label>
-                                              <select name="status2" id="status2" class="form-select">
-                                                <option value="Laki-laki">Laki-laki</option>
-                                                <option value="Perempuan">Perempuan</option>
-                                              </select>
-                                            </div>
-                                            <div class="mb-3">
-                                              <label for="status3" class="form-label">Status 3</label>
-                                              <select name="status3" id="status3" class="form-select">
-                                                <option value="Kepala Keluarga">Kepala Keluarga</option>
-                                                <option value="Istri">Istri</option>
-                                                <option value="Anak">Anak</option>
-                                                <option value="Orang Tua">Orang Tua</option>
-                                                <option value="Saudara">Saudara</option>
-                                              </select>
+                                                <label for="status1" class="form-label">Status 1</label>
+                                                <select name="status1" id="status1" class="form-select">
+                                                    <option value="" selected disabled>apakah menikah?</option>
+                                                    <option value="Menikah">Menikah</option>
+                                                    <option value="Belum Menikah">Belum Menikah</option>
+                                                    <option value="Janda">Janda</option>
+                                                    <option value="Duda">Duda</option>
+                                                </select>
+                                                </div>
+                                                <div class="mb-3">
+                                                <label for="status2" class="form-label">Status 2</label>
+                                                <select name="status2" id="status2" class="form-select">
+                                                    <option value="" selected disabled>kelamin</option>
+                                                    <option value="Laki-laki">Laki-laki</option>
+                                                    <option value="Perempuan">Perempuan</option>
+                                                </select>
+                                                </div>
+                                                <div class="mb-3">
+                                                <label for="status3" class="form-label">Status 3</label>
+                                                <select name="status3" id="status3" class="form-select">
+                                                    <option value="" selected disabled>posisi keluarga</option>
+                                                    <option value="Kepala Keluarga">Kepala Keluarga</option>
+                                                    <option value="Istri">Istri</option>
+                                                    <option value="Anak">Anak</option>
+                                                    <option value="Orang Tua">Orang Tua</option>
+                                                    <option value="Saudara">Saudara</option>
+                                                </select>
                                             </div>
                                             <div class="mb-3">
                                                 <label for="kd_blok" class="form-label">Kode blok</label>
