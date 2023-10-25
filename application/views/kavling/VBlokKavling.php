@@ -16,10 +16,6 @@
                 <!-- form -->
                 <form action="<?php echo site_Url('Welcome/blokKavlingInsert') ?>" method="POST">
                     <div class="mb-3">
-                        <label for="kd_blok" class="form-label">Kode blok</label>
-                        <input type="text" class="form-control" name="kd_blok" id="kd_blok" placeholder="">
-                    </div>
-                    <div class="mb-3">
                         <label for="nama_blok" class="form-label">Nama blok</label>
                         <input type="text" class="form-control" name="nama_blok" id="nama_blok" placeholder="">
                     </div>

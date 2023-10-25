@@ -16,10 +16,6 @@
                 <!-- form -->
                 <form action="<?php echo site_Url('Welcome/pendudukInsert') ?>" method="POST">
                     <div class="mb-3">
-                        <label for="kd_penduduk" class="form-label">Kode penduduk</label>
-                        <input type="text" class="form-control" name="kd_penduduk" id="kd_penduduk" placeholder="">
-                    </div>
-                    <div class="mb-3">
                         <label for="nik" class="form-label">NIK</label>
                         <input type="text" class="form-control" name="nik" id="nik" placeholder="">
                     </div>
@@ -38,6 +34,7 @@
                     <div class="mb-3">
                       <label for="status1" class="form-label">Status 1</label>
                       <select name="status1" id="status1" class="form-select">
+                        <option value="" selected disabled>apakah menikah?</option>
                         <option value="Menikah">Menikah</option>
                         <option value="Belum Menikah">Belum Menikah</option>
                         <option value="Janda">Janda</option>
@@ -47,6 +44,7 @@
                     <div class="mb-3">
                       <label for="status2" class="form-label">Status 2</label>
                       <select name="status2" id="status2" class="form-select">
+                        <option value="" selected disabled>kelamin</option>
                         <option value="Laki-laki">Laki-laki</option>
                         <option value="Perempuan">Perempuan</option>
                       </select>
@@ -54,6 +52,7 @@
                     <div class="mb-3">
                       <label for="status3" class="form-label">Status 3</label>
                       <select name="status3" id="status3" class="form-select">
+                        <option value="" selected disabled>posisi keluarga</option>
                         <option value="Kepala Keluarga">Kepala Keluarga</option>
                         <option value="Istri">Istri</option>
                         <option value="Anak">Anak</option>
@@ -63,7 +62,12 @@
                     </div>
                     <div class="mb-3">
                         <label for="kd_blok" class="form-label">Kode blok</label>
-                        <input type="text" class="form-control" name="kd_blok" id="kd_blok" placeholder="">
+                        <select name="kd_blok" id="kd_blok" class="form-select">
+                            <option value="" selected disabled>blok</option>
+                            <?php foreach ($Select as $item) : ?>
+                                <option value="<?= $item->kd_blok; ?>"><?= $item->nama_blok; ?></option>		
+                            <?php endforeach ?>
+                        </select>
                     </div>
                 
                     </div>
@@ -141,23 +145,23 @@
                                         <form  action="<?php echo site_Url('Welcome/pendudukUpdate') ?>" method="POST">
                                             <div class="mb-3">
                                                 <label for="kd_penduduk" class="form-label">Kode penduduk</label>
-                                                <input type="text" class="form-control" name="kd_penduduk" id="kd_penduduk" placeholder="<?php echo $ReadDS->kd_penduduk; ?>">
+                                                <input type="text" class="form-control" name="kd_penduduk" id="kd_penduduk" value="<?php echo $ReadDS->kd_penduduk; ?>">
                                             </div>
                                             <div class="mb-3">
                                                 <label for="nik" class="form-label">NIK</label>
-                                                <input type="text" class="form-control" name="nik" id="nik" placeholder="<?php echo $ReadDS->nik; ?>">
+                                                <input type="text" class="form-control" name="nik" id="nik" value="<?php echo $ReadDS->nik; ?>">
                                             </div>
                                             <div class="mb-3">
                                                 <label for="nama" class="form-label">Nama</label>
-                                                <input type="text" class="form-control" name="nama" id="nama" placeholder="<?php echo $ReadDS->nama; ?>">
+                                                <input type="text" class="form-control" name="nama" id="nama" value="<?php echo $ReadDS->nama; ?>">
                                             </div>
                                             <div class="mb-3">
                                                 <label for="tempat_lahir" class="form-label">Tempat lahir</label>
-                                                <input type="text" class="form-control" name="tempat_lahir" id="tempat_lahir" placeholder="<?php echo $ReadDS->tempat_lahir; ?>">
+                                                <input type="text" class="form-control" name="tempat_lahir" id="tempat_lahir" value="<?php echo $ReadDS->tempat_lahir; ?>">
                                             </div>
                                             <div class="mb-3">
                                                 <label for="tgl_lahir" class="form-label">Tanggal lahir</label>
-                                                <input type="date" class="form-control" name="tgl_lahir" id="tgl_lahir" placeholder="<?php echo $ReadDS->tgl_lahir; ?>">
+                                                <input type="date" class="form-control" name="tgl_lahir" id="tgl_lahir" value="<?php echo $ReadDS->tgl_lahir; ?>">
                                             </div>
                                             <div class="mb-3">
                                               <label for="status1" class="form-label">Status 1</label>
@@ -187,7 +191,12 @@
                                             </div>
                                             <div class="mb-3">
                                                 <label for="kd_blok" class="form-label">Kode blok</label>
-                                                <input type="text" class="form-control" name="kd_blok" id="kd_blok" placeholder="<?php echo $ReadDS->kd_blok; ?>">
+                                                <select name="kd_blok" id="kd_blok" class="form-select">
+                                                    <option value="" selected disabled>blok</option>
+                                                    <?php foreach ($Select as $item) : ?>
+                                                        <option value="<?= $item->kd_blok; ?>"><?= $item->nama_blok; ?></option>		
+                                                    <?php endforeach ?>
+                                                </select>
                                             </div>
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>

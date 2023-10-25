@@ -40,8 +40,6 @@ class Welcome extends CI_Controller {
 	}
 	public function blokKavlingInsert()
 	{
-		$data['DataKavling']=$this->MSudi->GetData('blok_kavling');
-		$add['kd_blok'] = $this->input->post('kd_blok');
 		$add['nama_blok'] = $this->input->post('nama_blok');
 		$add['no_blok'] = $this->input->post('no_blok');
 		$add['lokasi'] = $this->input->post('lokasi');
@@ -65,15 +63,17 @@ class Welcome extends CI_Controller {
 	}
 
 
+
+
 	public function penduduk()
 	{
 		$data['DataPenduduk']=$this->MSudi->GetData('penduduk');
+		$data['Select']=$this->MSudi->GetKavling('penduduk');
 		$data['content']='penduduk/VPenduduk';
 		$this->load->view('welcome_message',$data);
 	}
 	public function pendudukInsert()
 	{
-		$add['kd_penduduk'] = $this->input->post('kd_penduduk');
 		$add['nik'] = $this->input->post('nik');
 		$add['nama'] = $this->input->post('nama');
 		$add['tempat_lahir'] = $this->input->post('tempat_lahir');

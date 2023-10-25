@@ -1,8 +1,5 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
-
-class MSudi extends CI_Model
-{
+class MSudi extends CI_Model {
     function AddData($tabel, $data=array())
     {
         $this->db->insert($tabel,$data);
@@ -21,6 +18,16 @@ class MSudi extends CI_Model
     function GetData($tabel)
     {
         $query= $this->db->get($tabel);
+        return $query->result();
+    }
+
+    function GetKavling($tabel)
+    {
+        // $query= $this->db->get($tabel);
+        $query = $this->db->query(
+			"SELECT bk.kd_blok, bk.nama_blok
+			FROM blok_kavling as bk"
+		);
         return $query->result();
     }
 
